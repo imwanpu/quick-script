@@ -1,10 +1,9 @@
 
 # README
 # mkdir .wbin && cd .wbin && touch onekey2wsl_ubuntu.sh && chmod u+x onekey2wsl_ubuntu.sh && code ~
-# copy the content of this file to `onekey2wsl_ubuntu.sh`. For example `vi onekey2wsl_ubuntu.sh`.
+# copy the content of this file to `onekey2wsl_ubuntu.sh`. For example `vi onekey2wsl_ubuntu.sh`
 # sh .wbin/onekey2wsl_ubuntu.sh
-# after entering `zsh`, enterint `exit`, the shell script will continue to execute.
-# then restart the terminal.
+# after entering `zsh`, enterint `exit`, the shell script will continue to execute
 
 #!/bin/zsh
 if [ -d "${HOME}/.wbin" ]; then
@@ -1969,6 +1968,6 @@ net-tools \
 tldr
 
 ## 
-sudo mkdir -p /root/.local/share/tldr
-sudo tldr -u
+mkdir -p ~/.local/share/tldr
+tldr -u
 
