@@ -1931,14 +1931,14 @@ else
 fi
 
 if [ -d /home/wan/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
-    each "OK - Directory /home/wan/.oh-my-zsh/custom/plugins/zsh-autosuggestions exists"
+    echo "OK - Directory /home/wan/.oh-my-zsh/custom/plugins/zsh-autosuggestions exists"
 else
     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 fi
 
 
 if [ -d /home/wan/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
-    each "OK - Directory /home/wan/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting exists"
+    echo "OK - Directory /home/wan/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting exists"
 else
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 fi
