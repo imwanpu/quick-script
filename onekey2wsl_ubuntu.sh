@@ -1,3 +1,4 @@
+#!/bin/zsh
 if [ -d "${HOME}/.wbin" ]; then
     echo "OK - Directory ~/.wbin exists"
 else
