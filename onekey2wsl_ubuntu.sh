@@ -1,9 +1,18 @@
+
+# README
+# mkdir .wbin && cd .wbin && touch onekey2wsl_ubuntu.sh && chmod u+x onekey2wsl_ubuntu.sh && code ~
+# copy the content of this file to `onekey2wsl_ubuntu.sh`. For example `vi onekey2wsl_ubuntu.sh`
+# sh .wbin/onekey2wsl_ubuntu.sh
+# after entering `zsh`, enterint `exit`, the shell script will continue to execute
+
 #!/bin/zsh
 if [ -d "${HOME}/.wbin" ]; then
     echo "OK - Directory ~/.wbin exists"
 else
     mkdir ~/.wbin
 fi
+
+
 
 # 配置代理
 cat << EOF > ~/.wbin/proxy.sh 
@@ -51,7 +60,7 @@ test_setting(){
   if [ \${resp} = 200 ]; then
     echo "Proxy setup succeeded!"
   else
-    echo "Proxy setup failed!"
+    echo "Proxy setup failed!"wan
   fi
 }
  
@@ -71,8 +80,14 @@ else
 fi
 EOF
 
+
+code .
 sudo chmod u+x ~/.wbin/proxy.sh
 sh ~/.wbin/proxy.sh set
+
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install zsh -y
 
 # # 安装配置工具所必须的软件
 # sudo apt update -y
@@ -92,7 +107,7 @@ fi
 if [ -d "${HOME}/.oh-my-zsh" ]; then
     echo "OK - Directory ~/.oh-my-zsh exists"
 else
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://gitee.com/Devkings/oh_my_zsh_install/raw/master/install.sh)"
 fi
 
 sudo chsh -s /bin/zsh
@@ -1899,7 +1914,6 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=\${\${(%):-%x}:a}
 
 (( \${#p10k_config_opts} )) && setopt \${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
-
 EOF
 
 
@@ -1943,3 +1957,17 @@ if [ -d /home/wan/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
 else
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 fi
+
+
+zsh -c "source ~/.zshrc"
+
+# 安装其他软件
+
+sudo apt install -y \
+net-tools \
+tldr
+
+## 
+sudo mkdir -p /root/.local/share/tldr
+sudo tldr -u
+
